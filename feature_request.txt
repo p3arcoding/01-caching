@@ -1,0 +1,5 @@
+Feature request:
+  All logged out users will see a cached version of the logged OUT
+  only featured events
+  Logged in users will see an uncached version of the logged IN
+  only featured events

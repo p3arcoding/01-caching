@@ -1,11 +1,15 @@
+<%= cache_if current_user.nil?, "public-events-v1", expires_in: 10.seconds do %>
   <div class="container">
     <div class="card-columns">
       <div class="row">
         <% @events.each do |event| %>
-          <div class="col-sm mb-3 mt-3">
-            <%= render event %>
-          </div>
+          <%= cache event do %>
+            <div class="col-lg-3 d-flex align-items-stretch">
+              <%= render event %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
+<% end %>

@@ -5,8 +5,13 @@
       <%= event.name %>
     </h5>
     <p class="card-text">
-      <%= render event.artist %>
-      <%= render event.venue %>
+      <%= cache event.artist do %>
+        <%= render event.artist %>
+      <% end %>
+      
+      <%= cache event.venue do %>
+        <%= render event.venue %>
+      <% end %>
     </p>
     <a href="#" class="btn btn-primary">Buy tickets</a>
   </div>
