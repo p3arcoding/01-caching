@@ -1,0 +1,13 @@
+<div class="card text-white bg-<%= event.featured_for_logged_in? ? 'primary' : 'info' %>" style="width: 18rem;">
+  <img class="card-img-top" src="<%= event.thumbnail %>?<%= event.id %>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= event.name %>
+    </h5>
+    <p class="card-text">
+      <%= render event.artist %>
+      <%= render event.venue %>
+    </p>
+    <a href="#" class="btn btn-primary">Buy tickets</a>
+  </div>
+</div>
